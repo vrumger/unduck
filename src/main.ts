@@ -132,7 +132,7 @@ function getBangredirectUrl() {
     return searchUrl;
   } else {
     // No bang detected - use default search engine
-    const defaultSearchEngine = localStorage.getItem("default-search-engine") || "google";
+    const defaultSearchEngine = url.searchParams.get("default") || localStorage.getItem("default-search-engine") || "google";
     const engine = DEFAULT_SEARCH_ENGINES.find(e => e.value === defaultSearchEngine);
     
     if (!engine) return null;
